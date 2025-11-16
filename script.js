@@ -1,55 +1,46 @@
-// CoGrazer VR – Demo v0.7
+// CoGrazer VR – Demo v0.7 (simple version)
 // Global search + quick links + Street View button
 
 const iframe = document.getElementById("cityView");
 const searchInput = document.getElementById("mapSearch");
-const streetViewBtn = document.getElementById("streetViewBtn");
 
-// Basit embed URL
-function buildMapUrl(query) {
-  return `https://www.google.com/maps?q=${encodeURIComponent(
+// Başlangıç konumu
+let currentQuery = "Gökçeada, Çanakkale";
+
+// Haritayı güncelle
+function updateMap(query) {
+  currentQuery = query;
+  iframe.src = `https://www.google.com/maps?q=${encodeURIComponent(
     query
   )}&output=embed`;
 }
 
-// Varsayılan başlangıç konumu
-let currentQuery = "Gökçeada, Çanakkale";
+// Quick link butonları buradan çağrılıyor (HTML onclick ile)
+function goQuick(q) {
+  searchInput.value = q;
+  updateMap(q);
+}
 
-// Quick link butonlarını tekrar seç → artık garanti
-const quickLinkButtons = document.querySelectorAll(".quick-link-btn");
-
-// Quick link ile haritayı güncelle
-quickLinkButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const q = btn.dataset.q;
-    searchInput.value = q;
-    updateMap(q);
-  });
-});
-
-// Arama → Enter ile çalışsın
+// Arama kutusunda Enter’a basınca çalışsın
 searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    if (!searchInput.value.trim()) return;
-    updateMap(searchInput.value.trim());
+    const text = searchInput.value.trim();
+    if (!text) return;
+    updateMap(text);
   }
 });
 
-// Haritayı yenile
-function updateMap(query) {
-  currentQuery = query;
-  iframe.src = buildMapUrl(query);
-}
-
-// Street View → yeni sekmede aç
-streetViewBtn.addEventListener("click", () => {
+// Street View butonu – yeni sekme açar
+function openStreetView() {
+  if (!currentQuery) return;
   const q = encodeURIComponent(currentQuery);
-
-  // RESMİ GOOGLE STREET VIEW ARAMA
   const url = `https://www.google.com/maps/search/?api=1&query=${q}&layer=c`;
-
   window.open(url, "_blank", "noopener");
-});
+}
 
 // İlk yükleme
 updateMap(currentQuery);
+
+// Fonksiyonları global hale getir (HTML onclick için)
+window.goQuick = goQuick;
+window.openStreetView = openStreetView;

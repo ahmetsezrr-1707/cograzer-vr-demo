@@ -34,32 +34,39 @@
         placeholder="Search a place…"
         class="search-input-big"
       />
-      <button id="streetViewBtn" class="streetview-btn">
-        Open Street View
-      </button>
+    <button id="streetViewBtn" class="streetview-btn" onclick="openStreetView()">
+  Open Street View
+</button>
     </div>
 
-    <div class="quick-links">
-      <span>Popular:</span>
-      <button class="quick-link-btn" data-q="Gökçeada, Çanakkale">
-        Gökçeada
-      </button>
-      <button class="quick-link-btn" data-q="Taksim Meydanı, İstanbul">
-        İstanbul
-      </button>
-      <button class="quick-link-btn" data-q="Eiffel Tower, Paris">
-        Paris
-      </button>
-      <button class="quick-link-btn" data-q="Big Ben, London">
-        London
-      </button>
-      <button class="quick-link-btn" data-q="Shibuya Crossing, Tokyo">
-        Tokyo
-      </button>
-      <button class="quick-link-btn" data-q="Times Square, New York">
-        New York
-      </button>
-    </div>
+      <div class="quick-links">
+  <span>Popular:</span>
+  <button class="quick-link-btn" onclick="goQuick('Gökçeada, Çanakkale')">
+    Gökçeada
+  </button>
+  <button
+    class="quick-link-btn"
+    onclick="goQuick('Taksim Meydanı, İstanbul')"
+  >
+    İstanbul
+  </button>
+  <button class="quick-link-btn" onclick="goQuick('Eiffel Tower, Paris')">
+    Paris
+  </button>
+  <button class="quick-link-btn" onclick="goQuick('Big Ben, London')">
+    London
+  </button>
+  <button
+    class="quick-link-btn"
+    onclick="goQuick('Shibuya Crossing, Tokyo')"
+  >
+    Tokyo
+  </button>
+  <button class="quick-link-btn" onclick="goQuick('Times Square, New York')">
+    New York
+  </button>
+</div>
+
 
     <div class="note">
       <p>

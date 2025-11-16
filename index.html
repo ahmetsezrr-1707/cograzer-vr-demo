@@ -19,85 +19,78 @@
         </div>
       </header>
 
-      <main class="main">
-        <section class="controls">
-  <h2>Step 1 – Choose a country</h2>
-  <p class="hint">
-    First select a country, then a popular city. Finally you can explore it on
-    the map.
-  </p>
-
-  <!-- Countries -->
-  <div class="buttons" id="countryButtons">
-    <button class="pill-btn country-btn active" data-country="turkiye">
-      Türkiye 🇹🇷
-    </button>
-    <button class="pill-btn country-btn" data-country="almanya">
-      Almanya 🇩🇪
-    </button>
-    <button class="pill-btn country-btn" data-country="bk">
-      Birleşik Krallık 🇬🇧
-    </button>
-    <button class="pill-btn country-btn" data-country="fransa">
-      Fransa 🇫🇷
-    </button>
-    <button class="pill-btn country-btn" data-country="ispanya">
-      İspanya 🇪🇸
-    </button>
-    <button class="pill-btn country-btn" data-country="hollanda">
-      Hollanda 🇳🇱
-    </button>
-  </div>
-
-  <h2 style="margin-top:16px;">Step 2 – Choose a city</h2>
-  <p class="hint">Cities will change based on the selected country.</p>
-
-  <!-- Cities (dinamik dolduracağız) -->
-  <div class="buttons" id="cityButtons">
-    <!-- JS ile buton eklenecek -->
-  </div>
-
-  <h2 style="margin-top:16px;">Step 3 – Search inside the map</h2>
-  <p class="hint">
-    Type a place name (e.g. "Taksim Meydanı") and press Enter.
-  </p>
-  <input
-    id="mapSearch"
-    type="text"
-    placeholder="Search inside selected city..."
-    class="search-input"
-  />
-
-  <div class="note">
-    <p>
-      v0.6: Country → city → map selection<br />
-      v0.7: Better search &amp; Street View shortcuts<br />
-      v1: VR mode &amp; live robot streams
+      <main class="main-v07">
+  <section class="search-panel">
+    <h2>Search anywhere in the world</h2>
+    <p class="hint">
+      Type any place (e.g. "Gökçeada", "Tokyo Shibuya", "Times Square") and
+      press Enter.
     </p>
-  </div>
-</section>
 
-        <section class="viewer">
-          <div class="viewer-frame">
-            <iframe
-              id="cityView"
-              src=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+    <div class="search-row">
+      <input
+        id="mapSearch"
+        type="text"
+        placeholder="Search a place…"
+        class="search-input-big"
+      />
+      <button id="streetViewBtn" class="streetview-btn">
+        Open Street View
+      </button>
+    </div>
 
-          <div class="move-controls">
-            <button disabled>⬆</button>
-            <div class="middle-row">
-              <button disabled>⬅</button>
-              <span>Movement controls will be here in v1</span>
-              <button disabled>➡</button>
-            </div>
-            <button disabled>⬇</button>
-          </div>
-        </section>
-      </main>
+    <div class="quick-links">
+      <span>Popular:</span>
+      <button class="quick-link-btn" data-q="Gökçeada, Çanakkale">
+        Gökçeada
+      </button>
+      <button class="quick-link-btn" data-q="Taksim Meydanı, İstanbul">
+        İstanbul
+      </button>
+      <button class="quick-link-btn" data-q="Eiffel Tower, Paris">
+        Paris
+      </button>
+      <button class="quick-link-btn" data-q="Big Ben, London">
+        London
+      </button>
+      <button class="quick-link-btn" data-q="Shibuya Crossing, Tokyo">
+        Tokyo
+      </button>
+      <button class="quick-link-btn" data-q="Times Square, New York">
+        New York
+      </button>
+    </div>
+
+    <div class="note">
+      <p>
+        v0.7: Global search + Street View shortcut<br />
+        v0.8: Fullscreen VR layout<br />
+        v1.0: VR mode &amp; live robot streams
+      </p>
+    </div>
+  </section>
+
+  <section class="viewer">
+    <div class="viewer-frame">
+      <iframe
+        id="cityView"
+        src=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div class="move-controls">
+      <button disabled>⬆</button>
+      <div class="middle-row">
+        <button disabled>⬅</button>
+        <span>Movement controls will be here in v1</span>
+        <button disabled>➡</button>
+      </div>
+      <button disabled>⬇</button>
+    </div>
+  </section>
+</main>
 
       <footer class="footer">
         <p>Made by Ahmet – Future Tech Entrepreneur 🚀</p>

@@ -1,4 +1,4 @@
-# CoGrazer VR – Demo v0
+# Current version: Demo v0.6 — Country → City navigation + Search bar
 
 CoGrazer VR is a concept project by **Ahmet**, a future tech entrepreneur.  
 The goal is to let people explore real cities remotely using VR headsets and physical robots.
@@ -25,4 +25,6 @@ Built with:
 - HTML
 - CSS
 - Vanilla JavaScript
+
+Updated on: 2025-11-16
 

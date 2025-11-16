@@ -21,32 +21,61 @@
 
       <main class="main">
         <section class="controls">
-          <h2>Choose a city</h2>
-          <p class="hint">
-            This is a visual demo. In future versions, real robots will stream
-            these views live.
-          </p>
+  <h2>Step 1 – Choose a country</h2>
+  <p class="hint">
+    First select a country, then a popular city. Finally you can explore it on
+    the map.
+  </p>
 
-          <div class="buttons">
-            <button class="city-btn active" data-city="gokceada">
-              Gökçeada 🇹🇷
-            </button>
-            <button class="city-btn" data-city="paris">
-              Paris 🇫🇷
-            </button>
-            <button class="city-btn" data-city="london">
-              London 🇬🇧
-            </button>
-          </div>
+  <!-- Countries -->
+  <div class="buttons" id="countryButtons">
+    <button class="pill-btn country-btn active" data-country="turkiye">
+      Türkiye 🇹🇷
+    </button>
+    <button class="pill-btn country-btn" data-country="almanya">
+      Almanya 🇩🇪
+    </button>
+    <button class="pill-btn country-btn" data-country="bk">
+      Birleşik Krallık 🇬🇧
+    </button>
+    <button class="pill-btn country-btn" data-country="fransa">
+      Fransa 🇫🇷
+    </button>
+    <button class="pill-btn country-btn" data-country="ispanya">
+      İspanya 🇪🇸
+    </button>
+    <button class="pill-btn country-btn" data-country="hollanda">
+      Hollanda 🇳🇱
+    </button>
+  </div>
 
-          <div class="note">
-            <p>
-              v0: City switching only. <br />
-              v1: VR mode &amp; smoother controls. <br />
-              v2: Real robot streams.
-            </p>
-          </div>
-        </section>
+  <h2 style="margin-top:16px;">Step 2 – Choose a city</h2>
+  <p class="hint">Cities will change based on the selected country.</p>
+
+  <!-- Cities (dinamik dolduracağız) -->
+  <div class="buttons" id="cityButtons">
+    <!-- JS ile buton eklenecek -->
+  </div>
+
+  <h2 style="margin-top:16px;">Step 3 – Search inside the map</h2>
+  <p class="hint">
+    Type a place name (e.g. "Taksim Meydanı") and press Enter.
+  </p>
+  <input
+    id="mapSearch"
+    type="text"
+    placeholder="Search inside selected city..."
+    class="search-input"
+  />
+
+  <div class="note">
+    <p>
+      v0.6: Country → city → map selection<br />
+      v0.7: Better search &amp; Street View shortcuts<br />
+      v1: VR mode &amp; live robot streams
+    </p>
+  </div>
+</section>
 
         <section class="viewer">
           <div class="viewer-frame">

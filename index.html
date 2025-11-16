@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CoGrazer VR – Demo v0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="logo">
+          <span class="logo-main">CoG</span>
+          <span class="logo-sub">VR</span>
+        </div>
+        <div class="title-block">
+          <h1>CoGrazer VR</h1>
+          <p>Remote VR exploration of real cities – Demo v0</p>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="controls">
+          <h2>Choose a city</h2>
+          <p class="hint">
+            This is a visual demo. In future versions, real robots will stream
+            these views live.
+          </p>
+
+          <div class="buttons">
+            <button class="city-btn active" data-city="gokceada">
+              Gökçeada 🇹🇷
+            </button>
+            <button class="city-btn" data-city="paris">
+              Paris 🇫🇷
+            </button>
+            <button class="city-btn" data-city="london">
+              London 🇬🇧
+            </button>
+          </div>
+
+          <div class="note">
+            <p>
+              v0: City switching only. <br />
+              v1: VR mode &amp; smoother controls. <br />
+              v2: Real robot streams.
+            </p>
+          </div>
+        </section>
+
+        <section class="viewer">
+          <div class="viewer-frame">
+            <iframe
+              id="cityView"
+              src=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div class="move-controls">
+            <button disabled>⬆</button>
+            <div class="middle-row">
+              <button disabled>⬅</button>
+              <span>Movement controls will be here in v1</span>
+              <button disabled>➡</button>
+            </div>
+            <button disabled>⬇</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Ahmet – Future Tech Entrepreneur 🚀</p>
+      </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

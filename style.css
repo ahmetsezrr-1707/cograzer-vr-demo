@@ -94,7 +94,7 @@ body {
   gap: 8px;
 }
 
-.city-btn {
+.pill-btn {
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.5);
@@ -104,6 +104,37 @@ body {
   text-align: left;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
+}
+
+.pill-btn:hover {
+  border-color: #22ff88;
+  box-shadow: 0 0 12px rgba(34, 255, 136, 0.4);
+}
+
+.pill-btn.active {
+  background: radial-gradient(circle at top, #22ff8844, #0f172a);
+  border-color: #22ff88;
+}
+
+/* ülke/şehir özel class isimleri */
+.country-btn {}
+.city-btn {}
+
+.search-input {
+  margin-top: 4px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.95);
+  color: #e5e7eb;
+  font-size: 13px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #22ff88;
+  box-shadow: 0 0 12px rgba(34, 255, 136, 0.3);
 }
 
 .city-btn:hover {
